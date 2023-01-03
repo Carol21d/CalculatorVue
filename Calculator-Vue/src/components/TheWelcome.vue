@@ -4,7 +4,7 @@
 <template>
     <div class="calculator">
 <form action="#" name="calculator" id="calculator">
-  <input type="text" id="screen" value="0">
+  <input type="text" id="screen" value="0" :on-click="capture()">
   <div class="calculator_elements-group1">
     <input type="button" name="seven" id="7" value="7">
     <input type="button" name="eight" id="8" value="8">
