@@ -1,32 +1,78 @@
+<script>
 
-<script setup>
+
+export default {
+    data() {
+        return {
+            result: '',
+            buttons: [
+                { id: 'multiplication', label: '*' },
+                { id: 'division', label: '/' },
+                { id: 'coma', label: '.' },
+                { id: 'equals', label: '=' },
+                { id: 'cleanScreen', label: 'C' },
+                { id: '0', label: '0' },
+                { id: '1', label: '1' },
+                { id: '2', label: '2' },
+                { id: '3', label: '3' },
+                { id: '4', label: '4' },
+                { id: '5', label: '5' },
+                { id: '6', label: '6' },
+                { id: '7', label: '7' },
+                { id: '8', label: '8' },
+                { id: '9', label: '9' }
+            ]
+        }
+    },
+    
+        methods: {
+            operationChoose(button) {
+                switch (button.id) {
+                    case 'cleanScreen':
+                        this.result = '';
+                        break;
+                    case 'equals':
+                        this.result = eval(this.result);
+                        break;
+                    case 'multiplication':
+                        this.result += ' ' + button.label + ' ';
+                        break;
+                    case 'divide':
+                        this.result += ' ' + button.label + ' ';
+                        break;
+                     default:
+                        this.result +=  button.label;
+                    }
+                }
+            },
+        }
+
+                         
+    
+    
 </script>
 <template>
-    <div class="calculator">
-<form action="#" name="calculator" id="calculator">
-  <input type="text" id="screen" value="0" :on-click="capture()">
-  <div class="calculator_elements-group1">
-    <input type="button" name="seven" id="7" value="7">
-    <input type="button" name="eight" id="8" value="8">
-    <input type="button" name="nine" id="9" value="9">
-  </div>
-  <div class="calculator_elements-group2">
-    <input type="button" name="four" id="4" value="4">
-    <input type="button" name="five" id="5" value="5">
-    <input type="button" name="six" id="6" value="6">
-  </div>
-  <div class="calculator_elements-group3">
-    <input type="button" name="one" id="1" value="1">
-    <input type="button" name="two" id="2" value="2">
-    <input type="button" name="three" id="3" value="3">
-  </div>
-<div class="calculator_operations">
-  <input type="button" name="addition" id="addition" value="+" @click="addition()">
-  <input type="button" name="substraction" id="substraction" value="-" @click="substraction()">
-  <input type="button" name="multiplication" id="multiplication" value="x" @click="multiplication()">
-  <input type="button" name="division" id="division" value="/" @click="division()">
-  <input type="button" name="equal" id="equal" value="=" @click="equal()">
-</div>
-</form>
-  </div>
+    <div class="wrapper">
+        <div class="wrapper-display">
+            <input type="text" v-model="result" placeholder="0" readonly />
+        </div>
+        <div class="wrapper-buttons">
+            <button v-for="button in buttons" :key="button.id" @click="operationChoose(button)">{{ button.label
+                }}</button>
+        </div>
+    </div>
 </template>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
