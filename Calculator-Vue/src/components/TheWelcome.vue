@@ -6,21 +6,21 @@ export default {
       buttons: [
         { id: 'multiplication', label: '*' },
         { id: 'division', label: '/' },
-         { id: 'addition', label: '+' },
+        { id: 'addition', label: '+' },
         { id: 'subtraction', label: '-' },
         { id: 'coma', label: '.' },
         { id: 'equals', label: '=' },
         { id: 'cleanScreen', label: 'C' },
-        { id: '0', label: '0' },
-        { id: '1', label: '1' },
-        { id: '2', label: '2' },
-        { id: '3', label: '3' },
-        { id: '4', label: '4' },
-        { id: '5', label: '5' },
-        { id: '6', label: '6' },
-        { id: '7', label: '7' },
-        { id: '8', label: '8' },
-        { id: '9', label: '9' }
+        { id: 'zero', label: '0' },
+        { id: 'one', label: '1' },
+        { id: 'two', label: '2' },
+        { id: 'three', label: '3' },
+        { id: 'four', label: '4' },
+        { id: 'five', label: '5' },
+        { id: 'six', label: '6' },
+        { id: 'seven', label: '7' },
+        { id: 'eight', label: '8' },
+        { id: 'nine', label: '9' }
       ]
     }
   },
@@ -55,6 +55,7 @@ export default {
 </script>
 <template>
   <div class="wrapper">
+    <h1 class="wrapper-title">Calculator</h1>
     <div class="wrapper-display">
       <input type="text" v-model="result" placeholder="0" readonly />
     </div>
