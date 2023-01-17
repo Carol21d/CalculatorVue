@@ -11,9 +11,14 @@
     }
 
     body {
-        min-height: 100vh;
+        // min-height: 100vh;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        background-color: map-get(bgcolor.$colors, "dark");
-        color: map-get(bgcolor.$colors, "light");
+        // background-color: map-get(bgcolor.$colors, "dark");
+        // color: map-get(bgcolor.$colors, "light");
+        width: 100%;
+        height: 90%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
        
       }
