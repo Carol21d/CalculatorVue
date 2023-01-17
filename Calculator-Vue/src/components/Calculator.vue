@@ -11,6 +11,10 @@ export default {
         { id: 'coma', label: '.' },
         { id: 'equals', label: '=' },
         { id: 'cleanScreen', label: 'C' },
+        { id: 'USD', label: 'USD' },
+        { id: '¥', label: '¥' },
+        { id: 'HNL', label: 'HNL'},
+        { id: 'EUR', label: 'EUR'},
         { id: 'zero', label: '0' },
         { id: 'one', label: '1' },
         { id: 'two', label: '2' },
@@ -21,11 +25,22 @@ export default {
         { id: 'seven', label: '7' },
         { id: 'eight', label: '8' },
         { id: 'nine', label: '9' }
-      ]
+      ],
+      exchange:{
+        USD:1.06,
+        YEN:140.51,
+        HNL:26.26,
+        EUR:0.96
+
+
+      }
     }
   },
 
   methods: {
+    convert(from, to){
+        this.result = (this.result * this.exchange[to] / this.exchange[from]).toFixed(2);
+    },
     operationChoose(button) {
       switch (button.id) {
         case 'cleanScreen':
@@ -45,6 +60,18 @@ export default {
           break;
         case 'subtract':
           this.result += ' ' + button.label + ' ';
+          break;
+        case 'USD':
+          this.convert('USD','YEN');
+          break;
+        case '¥':
+          this.convert('USD','YEN');
+          break;
+        case 'HNL':
+          this.convert('HNL','EUR');
+          break;
+        case 'EUR':
+          this.convert('EUR','HNL');
           break;
         default:
           this.result += button.label;
