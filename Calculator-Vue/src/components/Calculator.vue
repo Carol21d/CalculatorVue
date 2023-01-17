@@ -91,6 +91,50 @@ export default {
     </div>
   </div>
 </template>
+<style lang="scss" scope>
+ 
+  .wrapper{
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 14px;
+    width: auto;
+    height: auto;
+    background-color: #0a2351;
+
+    .wrapper-title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+      font-size: larger;
+      font-weight: 800;
+      color:Black;
+      
+    
+    }
+
+    .wrapper-display{
+     border-radius: 12em;
+      margin-top: 10px;
+      height: 80px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      background-color: #E1EBEE;
+    }
+    
+
+    
+    
+     
+   
+
+
+
+    
+   
+  }
+
+</style>
                          
     
     

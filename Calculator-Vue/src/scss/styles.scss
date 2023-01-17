@@ -1,3 +1,19 @@
-@use 'colors';
-@use 'mixins';
-@use 'reset';
+@use './colors' as bgcolor;
+@use './mixins';
+@use './reset';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+    }
+
+    body {
+        min-height: 100vh;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: map-get(bgcolor.$colors, "dark");
+        color: map-get(bgcolor.$colors, "light");
+       
+      }

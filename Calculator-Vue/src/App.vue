@@ -1,17 +1,11 @@
 <script setup>
-import TheWelcome from './components/TheWelcome.vue'
+import Calculator from './components/Calculator.vue';
 </script>
 <template>
-  <header>
-    <div class="wrapper">
-    </div>
-  </header>
-  <main>
-    <TheWelcome />
-  </main>
+  <Calculator />
 </template>
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
 }
 .logo {
@@ -35,7 +29,7 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>
     
 
