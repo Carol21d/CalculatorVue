@@ -4,7 +4,7 @@ export default {
     return {
       result: "",
       buttons: [
-        { id: "multiplication", label: "*" },
+        { id: "multiplication", label: " *" },
         { id: "division", label: "/" },
         { id: "addition", label: "+" },
         { id: "subtraction", label: "-" },
@@ -95,6 +95,7 @@ export default {
     </div>
     <div class="wrapper-buttons">
       <button
+        class="button"
         v-for="button in buttons"
         :key="button.id"
         @click="operationChoose(button)"
@@ -105,6 +106,9 @@ export default {
   </div>
 </template>
 <style lang="scss" scope>
+@use "@/scss/mixins.scss" as m;
+@use "@/scss/colors.scss" as c;
+
 .wrapper {
   margin: 10px;
   padding: 10px;
@@ -112,21 +116,22 @@ export default {
   border-radius: 14px;
   width: auto;
   height: auto;
-  background-color: #0a2351;
+
+  background-color: map-get(c.$colors, "astro navy");
+  @include m.mv(700px) {
+    background-color: map-get($map: c.$colors, $key: "dark-blue");
+  }
 
   .wrapper-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include m.flex(flex, auto, auto, center, center);
     font-family: monospace;
-    font-size: 25px;
-    font-weight: 800;
+    font-size: 3em;
+    font-weight: 700;
     color: #febe10;
   }
 
   .wrapper-display {
-    border-radius: 12em;
-    margin-top: 10px;
+    margin: 1.5rem 1.5rem;
     height: 80px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
       rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -136,32 +141,140 @@ export default {
       font-size: 55px;
       font-weight: 200;
       text-align: right;
-      margin-right: 14px;
+      margin-right: 1.5rem;
     }
-    .wrapper-buttons {
-      button {
-        
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        &:hover {
-          background-color: #5072A7;
-        }
-        &[id="button1"] {
-          background-color: white;
-        }
-        &[id="button2"] {
-          background-color: white;
-        }
-      }
-      button[label="C"] {
-        background-color: #C40233;
-      }
-      button[label="equals"] {
-        background-color: #FFC72C;
-        color: white;
+  }
+
+  .wrapper-buttons {
+    @include m.flex(grid, auto, auto, center, center);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 1.5rem;
+
+    button {
+      color: white;
+      padding: 1em;
+      border-radius: 1rem;
+      margin-top: 0.5em;
+      &:hover {
+        background-color: map-get($map: c.$colors, $key: "purple");
       }
     }
   }
+}
+.button:nth-child(1) {
+  background-color: map-get($map: c.$colors, $key: "dark cyan");
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: span 1;
+  grid-column-end: 2;
+}
+
+.button:nth-child(2) {
+  background-color: map-get($map: c.$colors, $key: "dark cyan");
+}
+
+.button:nth-child(3) {
+  background-color: map-get($map: c.$colors, $key: "dark cyan");
+}
+
+.button:nth-child(4) {
+  background-color: map-get($map: c.$colors, $key: "dark cyan");
+}
+
+.button:nth-child(5) {
+  background-color: map-get($map: c.$colors, $key: "dark cyan");
+}
+
+.button:nth-child(6) {
+  background-color: map-get($map: c.$colors, $key: "mcdonalds-yellow");
+  grid-row-start: 5;
+  grid-column-start: 1;
+  grid-row-end: span 1;
+  grid-column-end: 6;
+}
+
+.button:nth-child(7) {
+  background-color: map-get($map: c.$colors, $key: "lava");
+}
+
+.button:nth-child(12) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 2;
+  grid-column-start: 5;
+  grid-row-end: span 1;
+  grid-column-end: 4;
+}
+
+.button:nth-child(13) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-end: span 1;
+  grid-column-end: 2;
+}
+
+.button:nth-child(14) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-row-end: span 1;
+  grid-column-end: 2;
+}
+
+.button:nth-child(15) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 2;
+  grid-column-start: 3;
+  grid-row-end: span 1;
+  grid-column-end: 3;
+}
+
+.button:nth-child(16) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-row-end: span 1;
+  grid-column-end: 1;
+}
+
+.button:nth-child(17) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-row-end: span 1;
+  grid-column-end: 2;
+}
+
+.button:nth-child(18) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 3;
+  grid-column-start: 4;
+  grid-row-end: span 1;
+  grid-column-end: 3;
+}
+
+.button:nth-child(19) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-row-end: span 1;
+  grid-column-end: 2;
+}
+
+.button:nth-child(20) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 4;
+  grid-column-start: 2;
+  grid-row-end: span 1;
+  grid-column-end: 2;
+}
+
+.button:nth-child(21) {
+  background-color: map-get($map: c.$colors, $key: "carolina-blue");
+  grid-row-start: 4;
+  grid-column-start: 3;
+  grid-row-end: span 1;
+  grid-column-end: 4;
 }
 </style>

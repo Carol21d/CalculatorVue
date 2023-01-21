@@ -16,5 +16,6 @@
 @mixin mv ( $medida: 1100px ){
     @media screen and (max-width: $medida ){
         @content;
+        background-color: #002244;
     }
 }
